@@ -1,4 +1,4 @@
-# Contact List
+# Contact List App
 
 This app utilizes a Model-View-Controller (MVC) approach and the MEAN stack.
 
