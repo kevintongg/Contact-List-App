@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Contact List App</title>
+
+  <link rel="stylesheet" href="bootstrap.css">
+
+  <script src="angular.js"></script>
+  <script src="controllers/controller.js"></script>
+
+</head>
+
+<body>
+<div class="container" ng-controller="AppCtrl">
+  <h1 class="text-center">Contact List App</h1>
+
+  <table class="table">
+    <tr>
+      <th class="text-center">Name</th>
+      <th class="text-center">Email</th>
+      <th class="text-center">Number</th>
+      <th class="text-center">Action</th>
+    </tr>
+
+    <tr>
+      <td class="text-center"><input class="form-control text-center" ng-model="contact.name"></td>
+      <td class="text-center"><input class="form-control text-center" ng-model="contact.email"></td>
+      <td class="text-center"><input class="form-control text-center" ng-model="contact.number"></td>
+      <td class="text-center">
+        <button class="btn btn-primary" ng-click="addContact()">Add Contact</button>
+      </td>
+      <td class="text-center">
+        <button class="btn btn-info" ng-click="update()">Update</button>
+        <button class="btn btn-info" ng-click="clear()">Clear</button>
+      </td>
+    </tr>
+
+    <tr ng-repeat="contact in contactlist">
+      <td class="text-center">{{contact.name}}</td>
+      <td class="text-center">{{contact.email}}</td>
+      <td class="text-center">{{contact.number}}</td>
+      <td class="text-center">
+        <button class="btn btn-danger" ng-click="remove(contact._id)">Remove</button>
+      </td>
+      <td class="text-center">
+        <button class="btn btn-warning" ng-click="edit(contact._id)">Edit</button>
+      </td>
+    </tr>
+
+  </table>
+</div>
+</body>
+
+</html>
