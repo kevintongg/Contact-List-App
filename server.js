@@ -18,6 +18,7 @@ app.get('/contactlist/', (request, response) => {
     response.json(docs);
   });
 });
+
 app.post('/contactlist/', (request, response) => {
   console.log(request.body);
   db.contactlist.save(request.body, (err, docs) => {
